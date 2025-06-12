@@ -32,4 +32,5 @@ RUN chown -R www-data:www-data /var/www/html \
 EXPOSE 80
 
 # Run migrations and start Apache
-CMD php artisan migrate --force && apache2-foreground
+# CMD php artisan migrate --force && apache2-foreground
+CMD  apache2-foreground
