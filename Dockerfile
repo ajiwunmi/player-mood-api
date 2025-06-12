@@ -15,6 +15,9 @@ WORKDIR /var/www/html
 # Copy Laravel app files
 COPY . /var/www/html
 
+# Change Apache DocumentRoot to /var/www/html/public
+RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
+
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
