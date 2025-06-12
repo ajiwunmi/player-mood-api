@@ -15,4 +15,6 @@ Route::prefix('v1')
 
         // Optional: Player view page or test endpoint
         Route::get('/player', [MoodController::class, 'player']);
+
+        Route::get('/moods/hourly', [MoodController::class, 'hourlySummary']);
     });
